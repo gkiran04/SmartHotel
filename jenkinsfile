@@ -5,8 +5,13 @@ pipeline{
         stage('Check out'){
             steps{
                 git changelog: false, poll: false, url: 'https://github.com/gkiran04/SmartHotel.git'
+            }            
+        }
+        
+        stage('Build'){
+            steps{
+                sh 'mvn -version'
             }
-            
         }
     } // Stages end
 
