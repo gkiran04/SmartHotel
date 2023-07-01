@@ -3,7 +3,10 @@ pipeline{
 
     stages{
         stage('Check out'){
-            git changelog: false, poll: false, url: 'https://github.com/gkiran04/SmartHotel.git'
+            steps{
+                git changelog: false, poll: false, url: 'https://github.com/gkiran04/SmartHotel.git'
+            }
+            
         }
     } // Stages end
 
