@@ -16,7 +16,7 @@ pipeline{
 
         stage('Code Analysis'){
             steps{
-                sh 'mvn sonar:sonar'
+                sh 'mvn clean sonar:sonar -Dsonar.host.url=http://34.93.167.58:9000/ -Dsonar.login=admin -Dsonar.password=kiran@123'
             }
         }
         
