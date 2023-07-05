@@ -13,12 +13,18 @@ pipeline{
                 sh 'mvn org.jacoco:jacoco-maven-plugin:0.5.5.201112152213:prepare-agent'
             }
         }
+
+        stage('Code Analysis'){
+            steps{
+                sh 'mvn sonar:sonar'
+            }
+        }
         
-        stage('Build'){
+        /* stage('Build'){
             steps{
                 sh 'mvn clean package -Dmaven.test.skip=true'
             }
-        }
+        }*/
     } // Stages end
 
 } // pipeline End
