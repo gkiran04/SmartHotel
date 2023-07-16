@@ -22,7 +22,8 @@ pipeline{
             steps{
                 withSonarQubeEnv('sonar') {
                     sh 'mvn clean sonar:sonar \
-                    -Dsonar.projectKey=smarthotel '
+                    -Dsonar.projectKey=smarthotel \
+                    -Dsonar.java.binaries=**/target/classes '
                 }    
             }
         }
