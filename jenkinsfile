@@ -23,7 +23,7 @@ pipeline{
                 withSonarQubeEnv('sonar') {
                     sh 'mvn clean sonar:sonar \
                     -Dsonar.projectKey=smarthotel \
-                    -Dsonar.java.binaries=**/target/classes '
+                    -Dsonar.java.binaries=./target/classes '
                 }    
             }
         }
