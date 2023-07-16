@@ -20,8 +20,10 @@ pipeline{
 
         stage('Code Analysis'){
             steps{
-                sh 'mvn clean sonar:sonar \
-                -Dsonar.projectKey=smarthotel'
+                withSonarQubeEnv('sonar') {
+                    sh 'mvn clean sonar:sonar \
+                    -Dsonar.projectKey=smarthotel '
+                }    
             }
         }
 
